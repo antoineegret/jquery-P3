@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Exercice 3</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="form">
+    <input type="number" id="counter" value="0">
+    <div id="info"></div>
+    <button type="button" id="more" name="button">Soumettre</button>
+  </div>
+  <script src="assets\js\jquery-3.3.1.min.js"></script>
+  <script> 
+  $(function(){
+  var counter = 0;
+  $("button").click(function(){
+    counter++; // counter compte le nombre de tentative
+    var valeur = $('#counter').val();
+    //54 et le nombre que l'on doit trouver
+    if (valeur == 54) {
+    // si l'on trouve du premier coup    
+      if (counter == 1) {$('#info').html('Félicitations ! Tu as trouvé en un seul essai !');}
+    // si l'on trouve aprés plusieur tentative il affiche le nombre de tentative graçe au compteur   
+      else {$('#info').html('Correct ! Il vous a fallu ' +counter + " tentatives");}
+    }
+    //si le nombre proposer et trop bas cela affiche:
+    else if (valeur > 54) {
+      $('#info').html('Moins !');
+    }
+    //si le nombre proposer et trop haut cela affiche:
+    else if (valeur < 54) {
+      $('#info').html('Plus !');
+    }
+  })
+})
+  </script>
+</body>
+</html>

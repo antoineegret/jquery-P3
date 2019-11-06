@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercice 1</title>
+</head>
+<body>
+    <form class="" action="index.html" method="post">
+        <input type="number" id="cpt" value="0">
+        <button id="button" type="button" name="button"> +1 </button>
+        <button id="button1" type="button" name="button"> -1 </button>
+    </form>
+    <script src="assets\js\jquery-3.3.1.min.js"></script>
+    <script>
+$(function(){
+var count = 0;
+$("#button").click(function(){
+  count++;
+  $('#cpt').val(count);
+})
+$("#button1").click(function(){
+  count--;
+  $('#cpt').val(count);
+})
+})
+    </script>
+</body>
+</html>

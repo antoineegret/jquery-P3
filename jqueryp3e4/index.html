@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #rectangle {
+        width: 50px;
+        height: 80px;
+        background-color: blue;
+    }
+    </style>
+</head>
+<body>
+<div class="form">
+        <div id="rectangle"></div>
+        <button id="more" type="button" name="button">Augmente hauteur</button>
+        <button id="colorGreen" type="button" name="button">Green</button>
+        <button id="colorReset" type="button" name="button">Reset color</button>
+        <button id="hide" type="button" name="button">Hide</button>
+        <button id="show" type="button" name="button">Show</button>
+    <script src="assets\js\jquery-3.3.1.min.js"></script>
+    <script>
+$(function(){
+    //programation du bouton cliquable
+
+  $("button").click(function(){
+    var myID = $(this).attr('id');
+
+    // switch chaque bouton correspond a une case et donc a une action definie dans chaque
+    switch(myID) {
+      case "more":
+      $('#rectangle').height("+=10px");
+
+      //height +=10px augmente la taille
+
+      if (($("#rectangle").height()) >= 100) {$('#rectangle').height(10);}
+      break;
+      //si le rectangle et plus grand que 100 il break ( ce casse en fr, il revient donc a zero)
+      case "colorGreen":
+      $('#rectangle').css("backgroundColor","green");
+      // change la couleur en vert
+      break;
+      case "colorReset":
+      $('#rectangle').css({'background-color':''});
+      break;
+      //toujour le meme principe break revient a la couleur d'origine
+      case "hide":
+      $('#rectangle').hide();
+      // hide cache le rectangle
+      break;
+      case "show":
+      $('#rectangle').show();
+      break;
+      //break casse l'action précedente et rend visible le rectangle
+    }
+  })
+})
+    </script>
+</body>
+</html>
